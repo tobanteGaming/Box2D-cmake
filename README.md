@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tobanteGaming/Box2D-cmake.svg?branch=master)](https://travis-ci.org/tobanteGaming/Box2D-cmake)
+
 # Box2D CMake Support
 
 This is a wrapper around the C++ library [Box2D](http://box2d.org/). The Source code can be found on [Github](https://github.com/erincatto/Box2D)
