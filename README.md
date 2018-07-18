@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/tobanteGaming/Box2D-cmake.svg?branch=master)](https://travis-ci.org/tobanteGaming/Box2D-cmake)
+[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](./LICENSE)
 
 # Box2D CMake Support
 
