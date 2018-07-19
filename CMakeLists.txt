@@ -50,7 +50,7 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/Box2D/Box2D/Rope/b2Rope.cpp
 )
 
-add_library(${PROJECT_NAME} ${SOURCES})
+add_library(${PROJECT_NAME} STATIC ${SOURCES})
 add_library(TG::Box2D ALIAS ${PROJECT_NAME})
 
 target_include_directories( ${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/Box2D)
