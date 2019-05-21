@@ -1,0 +1,22 @@
+# GENERAL
+branches:
+  only:
+    - master
+image:
+  - Visual Studio 2017
+clone_folder: c:\projects\source
+
+# BUILD
+build_script:
+- cmd: >-
+    mkdir build_debug
+    cd build_debug
+    cmake .. -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE:STRING=Debug
+    
+    cmake --build . --config "Debug"
+    cd ..
+    mkdir build_release
+    cd build_release
+    cmake .. -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE:STRING=Release
+    
+    cmake --build . --config "Release"
