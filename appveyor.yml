@@ -6,9 +6,12 @@ image:
   - Visual Studio 2017
 clone_folder: c:\projects\source
 
+# SETUP
+install:
+  - cmd: cd c:\projects\source
+  - cmd: git submodule update --init --recursive
 # BUILD
-build_script:
-- cmd: >-
-    cmake .
 
-    cmake --build .
+build_script:
+  - cmd: cmake .
+  - cmd: cmake --build .
