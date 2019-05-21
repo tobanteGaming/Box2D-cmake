@@ -54,5 +54,5 @@ add_library(${PROJECT_NAME} STATIC ${SOURCES})
 add_library(tobanteGaming::Box2D ALIAS ${PROJECT_NAME})
 
 target_include_directories( ${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/Box2D)
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_11)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
 

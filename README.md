@@ -6,17 +6,20 @@
 This is a wrapper around the C++ library [Box2D](http://box2d.org/). The Source code can be found on [Github](https://github.com/erincatto/Box2D)
 
 ## Usage
-### Clone
-In your project root:
+
+### Add as Submodule
+
 ```sh
-git clone --recurse-submodules https://github.com/tobanteGaming/Box2D-cmake.git 3rdparty/Box2D-cmake
+cd $PROJECT_ROOT
+git submodule add https://github.com/tobanteGaming/Box2D-cmake.git 3rd_party/Box2D-cmake
+git submodule update --init --recursive
 ```
-### Use 
+
+### Use
+
 In CMakeLists.txt:
+
 ```
 add_subdirectory(3rd_party/Box2D-cmake)
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
-target_link_libraries(${PROJECT_NAME} TG::Box2D)
+target_link_libraries(${PROJECT_NAME} tobanteGaming::Box2D)
 ```
-
-
