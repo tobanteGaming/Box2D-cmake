@@ -1,14 +1,34 @@
-dist: trusty
-sudo: false
+branches:
+  only:
+    - master
+
 language: cpp
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-5
+script-anchors:
+  - &script-linux
+    - CXX=/usr/bin/g++-6 CC=/usr/bin/gcc-6 cmake .
+    - cmake --build . -- -j2
 
-script:
-  - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
-  - cmake --build . -- -j2
+  - &script-macOS
+    - cmake .
+    - cmake --build . -- -j2
+
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode9.4
+      script: *script-macOS
+
+
+    - os: linux
+      dist: trusty
+      sudo: required
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-6
+            - g++-6
+      script: *script-linux
+
